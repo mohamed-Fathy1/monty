@@ -51,6 +51,7 @@ void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 void print_error(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 void print_error1(int error, unsigned int line_number, char *opcode,

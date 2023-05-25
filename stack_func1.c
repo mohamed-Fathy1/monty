@@ -15,3 +15,16 @@ void add(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 
+
+
+
+/**
+ * nop - func
+ * @stack: input
+ * @line_number: input
+ */
+void nop(stack_t **stack, unsigned int line_number)
+{
+	UNUSED(stack);
+	UNUSED(line_number);
+}
