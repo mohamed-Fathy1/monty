@@ -14,7 +14,7 @@ void print_error(int error, unsigned int line_number, char *opcode,
 	switch (error)
 	{
 		case 1:
-			write(STDERR_FILENO, "USAGE: monty file\n", strlen("USAGE: monty file\n"));
+			fprintf(stderr, "USAGE: monty file\n");
 			break;
 		case 2:
 			fprintf(stderr, "Error: Can't open file %s\n", opcode);
