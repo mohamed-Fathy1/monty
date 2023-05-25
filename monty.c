@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	instruction_t instruction[] = {{"push", push}, {"pall", pall}, {"pint", pint},
 					{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
-					{"sub", sub}, {NULL, NULL}};
+					{"sub", sub}, {"div", divide}, {NULL, NULL}};
 
 	if (argc != 2)
 	{

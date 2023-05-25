@@ -32,7 +32,7 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, opcode);
 			break;
 		case 9:
-			fprintf(stderr, "L%d: \n", line_number);
+			fprintf(stderr, "L%d: division by zero\n", line_number);
 			break;
 	}
 	fclose(fd);
