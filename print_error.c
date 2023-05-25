@@ -13,12 +13,6 @@ void print_error(int error, unsigned int line_number, char *opcode,
 	free_dlistint(stack);
 	switch (error)
 	{
-		case 1:
-			fprintf(stderr, "USAGE: monty file\n");
-			break;
-		case 2:
-			fprintf(stderr, "Error: Can't open file %s\n", opcode);
-			break;
 		case 3:
 			fprintf(stderr, "L%d: Unknown instruction %s\n", line_number, opcode);
 			break;
@@ -30,5 +24,31 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			break;
 	}
 	fclose(fd);
+	exit(EXIT_FAILURE);
+}
+
+
+/**
+ * print_error1 - func
+ * @error: input
+ * @line_number: input
+ * @opcode: input
+ * @stack: input
+ */
+void print_error1(int error, unsigned int line_number, char *opcode,
+		stack_t *stack)
+{
+	UNUSED(stack);
+	UNUSED(line_number);
+
+	switch (error)
+	{
+		case 1:
+			fprintf(stderr, "USAGE: monty file\n");
+			break;
+		case 2:
+			fprintf(stderr, "Error: Can't open file %s\n", opcode);
+			break;
+	}
 	exit(EXIT_FAILURE);
 }
