@@ -66,3 +66,22 @@ void divide(stack_t **stack, unsigned int line_number)
 	pop(stack, line_number);
 }
 
+
+
+/**
+ * mul - func
+ * @stack: input
+ * @line_number: input
+ */
+void mul(stack_t **stack, unsigned int line_number)
+{
+	if (is_empty(*stack) || stack_len(*stack) < 2)
+		print_error(8, line_number, "mul", *stack);
+
+	(*stack)->next->n *= (*stack)->n;
+	pop(stack, line_number);
+}
+
+
+
+

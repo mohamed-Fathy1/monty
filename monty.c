@@ -15,7 +15,8 @@ int main(int argc, char **argv)
 	stack_t *stack = NULL;
 	instruction_t instruction[] = {{"push", push}, {"pall", pall}, {"pint", pint},
 					{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
-					{"sub", sub}, {"div", divide}, {NULL, NULL}};
+					{"sub", sub}, {"div", divide}, {"mul", mul}, {"mod", mod},
+					{NULL, NULL}};
 
 	if (argc != 2)
 	{
@@ -23,9 +24,7 @@ int main(int argc, char **argv)
 	}
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
-	{
 		print_error1(2, 0, argv[1], stack);
-	}
 	while (fgets(instruct_buff, MAX_BUFFER, fd) != NULL)
 	{
 		int i;
