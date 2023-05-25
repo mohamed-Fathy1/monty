@@ -23,7 +23,7 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
 		case 6:
-			fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+			fprintf(stderr, "L%d: can't %s, stack empty\n", line_number, opcode);
 			break;
 		case 7:
 			fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
@@ -33,6 +33,9 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			break;
 		case 9:
 			fprintf(stderr, "L%d: division by zero\n", line_number);
+			break;
+		case 10:
+			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 			break;
 	}
 	fclose(fd);

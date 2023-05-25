@@ -46,3 +46,15 @@ size_t stack_len(const stack_t *h)
 	}
 	return (len);
 }
+
+/**
+ * is_ascii - function
+ * @ascii: input
+ * Return: int
+ */
+int is_ascii(int ascii)
+{
+	return (ascii >= 0 && ascii <= 127);
+}
+
+

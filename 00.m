@@ -1,3 +1,2 @@
-#push 1
-#div
-#pall
+push 772
+pchar

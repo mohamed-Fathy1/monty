@@ -56,12 +56,14 @@ void sub(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 void print_error(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 void print_error1(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 int is_integer(char *str);
 int is_empty(stack_t *ptr);
+int is_ascii(int ascii);
 size_t stack_len(const stack_t *h);
 void free_dlistint(stack_t *head);
 

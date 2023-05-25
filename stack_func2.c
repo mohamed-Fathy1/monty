@@ -21,3 +21,25 @@ void mod(stack_t **stack, unsigned int line_number)
 
 
 
+/**
+ * pchar - func
+ * @stack: input
+ * @line_number: input
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	int ascii = 0;
+
+	if (is_empty(*stack))
+		print_error(6, line_number, "pchar", *stack);
+
+	ascii = (*stack)->n;
+	if (!is_ascii(ascii))
+		print_error(10, line_number, NULL, *stack);
+	putchar(ascii);
+	putchar('\n');
+}
+
+
+
+

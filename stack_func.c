@@ -57,7 +57,7 @@ void pall(stack_t **stack, unsigned int line_number)
 void pint(stack_t **stack, unsigned int line_number)
 {
 	if (is_empty(*stack))
-		print_error(6, line_number, NULL, *stack);
+		print_error(6, line_number, "pint", *stack);
 	printf("%d\n", (*stack)->n);
 }
 
