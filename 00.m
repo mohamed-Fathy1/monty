@@ -1,3 +1,3 @@
-push 1
-div
-pall
+#push 1
+#div
+#pall

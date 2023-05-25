@@ -19,10 +19,9 @@ int main(int argc, char **argv)
 					{NULL, NULL}};
 
 	if (argc != 2)
-	{
 		print_error1(1, 0, NULL, stack);
-	}
 	fd = fopen(argv[1], "r");
+
 	if (fd == NULL)
 		print_error1(2, 0, argv[1], stack);
 	while (fgets(instruct_buff, MAX_BUFFER, fd) != NULL)
@@ -31,7 +30,7 @@ int main(int argc, char **argv)
 		char *opcode = strtok(instruct_buff, " \n");
 
 		line_number++;
-		if (!opcode)
+		if (!opcode || *opcode == '#')
 			continue;
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
