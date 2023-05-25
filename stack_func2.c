@@ -61,7 +61,8 @@ void pstr(stack_t **stack, unsigned int line_number)
 	{
 		putchar(ascii);
 		ptr = ptr->next;
-		ascii = ptr->n;
+		if (ptr)
+			ascii = ptr->n;
 	}
 	putchar('\n');
 }
