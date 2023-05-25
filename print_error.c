@@ -29,10 +29,10 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 			break;
 		case 8:
-			fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
+			fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, opcode);
 			break;
 		case 9:
-			fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+			fprintf(stderr, "L%d: \n", line_number);
 			break;
 	}
 	fclose(fd);

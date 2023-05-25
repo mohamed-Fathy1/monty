@@ -96,7 +96,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	int tmp = 0;
 
 	if (is_empty(*stack) || stack_len(*stack) < 2)
-		print_error(8, line_number, NULL, *stack);
+		print_error(8, line_number, "swap", *stack);
 
 	tmp = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
