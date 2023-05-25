@@ -28,3 +28,21 @@ int is_empty(stack_t *ptr)
 {
 	return (ptr == NULL);
 }
+
+
+/**
+ * stack_len - function
+ * @h: input
+ * Return: size_t
+ */
+size_t stack_len(const stack_t *h)
+{
+	int len = 0;
+
+	while (h)
+	{
+		h = h->next;
+		len++;
+	}
+	return (len);
+}

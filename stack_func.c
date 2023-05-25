@@ -81,3 +81,24 @@ void pop(stack_t **stack, unsigned int line_number)
 		free(tmp);
 	tmp = NULL;
 }
+
+
+
+
+
+/**
+ * swap - func
+ * @stack: input
+ * @line_number: input
+ */
+void swap(stack_t **stack, unsigned int line_number)
+{
+	int tmp = 0;
+
+	if (is_empty(*stack) || stack_len(*stack) < 2)
+		print_error(8, line_number, NULL, *stack);
+
+	tmp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = tmp;
+}
