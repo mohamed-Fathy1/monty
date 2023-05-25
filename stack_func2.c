@@ -42,4 +42,31 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 
 
+/**
+ * pstr - func
+ * @stack: input
+ * @line_number: input
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	int ascii = 0;
+	stack_t *ptr = *stack;
+
+	UNUSED(line_number);
+
+	if (!is_empty(*stack))
+		ascii = (*stack)->n;
+
+	while (ptr && ascii && is_ascii(ascii))
+	{
+		putchar(ascii);
+		ptr = ptr->next;
+		ascii = ptr->n;
+	}
+	putchar('\n');
+}
+
+
+
+
 

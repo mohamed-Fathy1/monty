@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	instruction_t instruction[] = {{"push", push}, {"pall", pall}, {"pint", pint},
 					{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
 					{"sub", sub}, {"div", divide}, {"mul", mul}, {"mod", mod},
-					{"pchar", pchar}, {NULL, NULL}};
+					{"pchar", pchar}, {"pstr", pstr}, {NULL, NULL}};
 
 	if (argc != 2)
 		print_error1(1, 0, NULL, stack);

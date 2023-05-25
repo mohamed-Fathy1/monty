@@ -57,6 +57,7 @@ void divide(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 void print_error(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 void print_error1(int error, unsigned int line_number, char *opcode,
