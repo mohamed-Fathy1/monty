@@ -47,5 +47,5 @@ int main(int argc, char **argv)
 	}
 	fclose(fd);
 	free_dlistint(stack);
-	return (0);
+	exit(EXIT_SUCCESS);
 }
