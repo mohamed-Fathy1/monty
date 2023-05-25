@@ -6,8 +6,9 @@
  * @line_number: input
  * @opcode: input
  */
-void print_error(int error, unsigned int line_number, char *opcode)
+void print_error(int error, unsigned int line_number, char *opcode, stack_t *stack)
 {
+	free_dlistint(stack);
 	switch (error)
 	{
 		case 1:
@@ -21,6 +22,9 @@ void print_error(int error, unsigned int line_number, char *opcode)
 			break;
 		case 4:
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			break;
+		case 5:
+			fprintf(stderr, "Error: malloc failed\n");
 			break;
 	}
 	exit(EXIT_FAILURE);

@@ -17,12 +17,12 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		print_error(1, 0, NULL);
+		print_error(1, 0, NULL, stack);
 	}
 	fd = fopen(argv[1], "r");
 	if (fd == NULL)
 	{
-		print_error(2, 0, argv[1]);
+		print_error(2, 0, argv[1], stack);
 	}
 	while (fgets(instruct_buff, MAX_BUFFER, fd) != NULL)
 	{
@@ -42,9 +42,10 @@ int main(int argc, char **argv)
 		}
 		if (instruction[i].opcode == NULL)
 		{
-			print_error(3, line_number, opcode);
+			print_error(3, line_number, opcode, stack);
 		}
 	}
 	fclose(fd);
+	free_dlistint(stack);
 	return (0);
 }

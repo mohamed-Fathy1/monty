@@ -7,19 +7,20 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_stack = malloc(sizeof(stack_t));
+	stack_t *new_stack = NULL;
 	int value;
 	char *tok_val = strtok(NULL, " \n");
 
 	if (tok_val == NULL || !is_integer(tok_val))
-		print_error(4, line_number, NULL);
+		print_error(4, line_number, NULL, *stack);
 	value = atoi(tok_val);
 
+	new_stack = malloc(sizeof(stack_t));
 	if (new_stack == NULL)
 	{
-		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		print_error(5, line_number, NULL, *stack);
 	}
+	
 	new_stack->next = *stack;
 	new_stack->prev = NULL;
 	new_stack->n = value;
