@@ -13,7 +13,8 @@ int main(int argc, char **argv)
 	char instruct_buff[MAX_BUFFER];
 	unsigned int line_number = 0;
 	stack_t *stack = NULL;
-	instruction_t instruction[] = {{"push", push}, {"pall", pall}, {NULL, NULL}};
+	instruction_t instruction[] = {{"push", push}, {"pall", pall}, {"pint", pint},
+					{NULL, NULL}};
 
 	if (argc != 2)
 	{

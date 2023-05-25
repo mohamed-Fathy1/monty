@@ -48,11 +48,13 @@ extern FILE *fd;
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 void print_error(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 void print_error1(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 int is_integer(char *str);
+int is_empty(stack_t *ptr);
 void free_dlistint(stack_t *head);
 
 #endif

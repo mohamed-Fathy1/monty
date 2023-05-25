@@ -16,3 +16,15 @@ int is_integer(char *str)
 	}
 	return (1);
 }
+
+
+
+/**
+ * is_empty - function
+ * @ptr: input
+ * Return: int
+ */
+int is_empty(stack_t *ptr)
+{
+	return (ptr == NULL);
+}

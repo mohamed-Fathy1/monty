@@ -22,6 +22,9 @@ void print_error(int error, unsigned int line_number, char *opcode,
 		case 5:
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
+		case 6:
+			fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+			break;
 	}
 	fclose(fd);
 	exit(EXIT_FAILURE);
