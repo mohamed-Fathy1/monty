@@ -5,8 +5,10 @@
  * @error: input
  * @line_number: input
  * @opcode: input
+ * @stack: input
  */
-void print_error(int error, unsigned int line_number, char *opcode, stack_t *stack)
+void print_error(int error, unsigned int line_number, char *opcode,
+		stack_t *stack)
 {
 	free_dlistint(stack);
 	switch (error)

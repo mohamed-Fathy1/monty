@@ -20,7 +20,7 @@ void push(stack_t **stack, unsigned int line_number)
 	{
 		print_error(5, line_number, NULL, *stack);
 	}
-	
+
 	new_stack->next = *stack;
 	new_stack->prev = NULL;
 	new_stack->n = value;
