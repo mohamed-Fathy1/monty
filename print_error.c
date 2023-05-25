@@ -31,6 +31,9 @@ void print_error(int error, unsigned int line_number, char *opcode,
 		case 8:
 			fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 			break;
+		case 9:
+			fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+			break;
 	}
 	fclose(fd);
 	exit(EXIT_FAILURE);
