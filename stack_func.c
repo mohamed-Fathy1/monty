@@ -58,3 +58,24 @@ void pint(stack_t **stack, unsigned int line_number)
 		print_error(6, line_number, NULL, *stack);
 	printf("%d\n", (*stack)->n);
 }
+
+
+
+/**
+ * pop - func
+ * @stack: input
+ * @line_number: input
+ */
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+
+	if (is_empty(*stack))
+		print_error(7, line_number, NULL, *stack);
+
+	*stack = (*stack)->next;
+
+	if (tmp)
+		free(tmp);
+	tmp = NULL;
+}
