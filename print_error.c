@@ -29,5 +29,6 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			fprintf(stderr, "Error: malloc failed\n");
 			break;
 	}
+	fclose(fd);
 	exit(EXIT_FAILURE);
 }
