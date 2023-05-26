@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-#define MAX_BUFFER 112024
+#define MAX_BUFFER 5112024
 #define UNUSED(x) (void)(x)
 
 /**
