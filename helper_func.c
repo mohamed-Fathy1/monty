@@ -7,7 +7,7 @@
  */
 int is_integer(char *str)
 {
-	int i = 0;
+	int i = (str[0] == '-') ? 1 : 0;
 
 	if (str == NULL)
 		return (0);
