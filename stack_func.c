@@ -11,15 +11,15 @@ void push(stack_t **stack, unsigned int line_number)
 	int value;
 	char *tok_val = strtok(NULL, " \n");
 
-	if (tok_val == NULL || !is_integer(tok_val))
-		print_error(4, line_number, NULL, *stack);
-	value = atoi(tok_val);
-
 	new_stack = malloc(sizeof(stack_t));
 	if (new_stack == NULL)
 	{
 		print_error(5, line_number, NULL, *stack);
 	}
+
+	if (!is_integer(tok_val))
+		print_error(4, line_number, NULL, *stack);
+	value = atoi(tok_val);
 
 	new_stack->next = *stack;
 	new_stack->prev = NULL;
