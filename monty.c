@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 		char *opcode = strtok(instruct_buff, " \n\t\a");
 
 		line_number++;
-		if (!opcode || *opcode == '\n' || *opcode == '#')
+		if (!opcode || *opcode == '#')
 			continue;
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
