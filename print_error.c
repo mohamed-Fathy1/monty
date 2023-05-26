@@ -14,7 +14,7 @@ void print_error(int error, unsigned int line_number, char *opcode,
 	switch (error)
 	{
 		case 3:
-			fprintf(stderr, "L%d: Unknown instruction %s\n", line_number, opcode);
+			fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 			break;
 		case 4:
 			fprintf(stderr, "L%d: usage: push integer\n", line_number);
