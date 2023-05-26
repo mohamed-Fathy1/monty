@@ -14,7 +14,7 @@ int is_integer(char *str)
 
 	for (; str[i] != '\0'; i++)
 	{
-		if (!isdigit(*str))
+		if (!isdigit(str[i]))
 			return (0);
 	}
 	return (1);
