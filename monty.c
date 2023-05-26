@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 	while (fgets(instruct_buff, MAX_BUFFER, fd) != NULL)
 	{
 		int i;
-		char *opcode = strtok(instruct_buff, " \n");
+		char *opcode = strtok(instruct_buff, " \n\t\a");
 
 		line_number++;
 		if (!opcode || *opcode == '#')

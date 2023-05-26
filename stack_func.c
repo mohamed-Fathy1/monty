@@ -9,7 +9,7 @@ void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_stack = NULL;
 	int value;
-	char *tok_val = strtok(NULL, " \n");
+	char *tok_val = strtok(NULL, " \n\t\a");
 
 	if (tok_val == NULL || !is_integer(tok_val))
 		print_error(4, line_number, NULL, *stack);
