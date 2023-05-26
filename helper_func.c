@@ -7,11 +7,14 @@
  */
 int is_integer(char *str)
 {
-	int i = str[0] == '-' ? 1 : 0;
+	int i = 0;
+
+	if (str == NULL)
+		return (0);
 
 	for (; str[i] != '\0'; i++)
 	{
-		if (!isdigit(str[i]))
+		if (!isdigit(*str))
 			return (0);
 	}
 	return (1);
