@@ -69,5 +69,54 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 
 
+/**
+ * rotl - func
+ * @stack: input
+ * @line_number: input
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	int tmp;
+	stack_t *copy;
 
+	UNUSED(line_number);
+
+	if (stack && *stack)
+	{
+		tmp = (*stack)->n;
+
+		for (copy = *stack; copy->next; copy = copy->next)
+			copy->n = copy->next->n;
+		copy->n = tmp;
+	}
+}
+
+
+/**
+ * rotr - func
+ * @stack: input
+ * @line_number: input
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	int next, current;
+	stack_t *copy;
+
+	UNUSED(line_number);
+
+	if (stack && *stack)
+	{
+		copy = *stack;
+		next = copy->n;
+
+		while (copy->next)
+		{
+			current = next;
+			next = copy->next->n;
+			copy->next->n = current;
+			copy = copy->next;
+		}
+		(*stack)->n = next;
+	}
+}
 
