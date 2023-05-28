@@ -101,24 +101,24 @@ void rotl(stack_t **stack, unsigned int line_number)
  */
 void rotr(stack_t **stack, unsigned int line_number)
 {
-	int next, current;
-	stack_t *copy;
+	stack_t *tmp = NULL;
+	int current, next;
 
 	UNUSED(line_number);
 
-	if (stack && *stack)
+	if (*stack)
 	{
-		copy = *stack;
-		next = copy->n;
-
-		while (copy->next)
-		{
-			current = next;
-			next = copy->next->n;
-			copy->next->n = current;
-			copy = copy->next;
-		}
-		(*stack)->n = next;
+		tmp = *stack;
+		next = (*stack)->n;
 	}
+
+	while (tmp && tmp->next)
+	{
+		current = next;
+		next = tmp->next->n;
+		tmp->next->n = current;
+		tmp = tmp->next;
+	}
+	(*stack)->n = next;
 }
 
