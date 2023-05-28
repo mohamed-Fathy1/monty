@@ -106,19 +106,18 @@ void rotr(stack_t **stack, unsigned int line_number)
 
 	UNUSED(line_number);
 
-	if (*stack)
+	if (stack && *stack)
 	{
 		tmp = *stack;
 		next = (*stack)->n;
+		while (tmp && tmp->next)
+		{
+			current = next;
+			next = tmp->next->n;
+			tmp->next->n = current;
+			tmp = tmp->next;
+		}
+		(*stack)->n = next;
 	}
-
-	while (tmp && tmp->next)
-	{
-		current = next;
-		next = tmp->next->n;
-		tmp->next->n = current;
-		tmp = tmp->next;
-	}
-	(*stack)->n = next;
 }
 
