@@ -76,12 +76,15 @@ void pstr(stack_t **stack, unsigned int line_number)
  */
 void rotl(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
+	stack_t *tmp = NULL;
 	int tmp_int;
 
 	UNUSED(line_number);
 
-	while (tmp->next && stack)
+	if (*stack)
+		tmp = *stack;
+
+	while (tmp && tmp->next)
 	{
 		tmp_int = tmp->next->n;
 		tmp->next->n = tmp->n;
