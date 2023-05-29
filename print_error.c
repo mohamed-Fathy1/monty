@@ -38,7 +38,7 @@ void print_error(int error, unsigned int line_number, char *opcode,
 			fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 			break;
 	}
-	fclose(fd);
+	fclose(pub.fd);
 	exit(EXIT_FAILURE);
 }
 

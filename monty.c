@@ -1,6 +1,6 @@
 #include "monty.h"
 
-FILE *fd;
+pub_t pub = {NULL, 1};
 
 /**
  * main - function
@@ -17,15 +17,15 @@ int main(int argc, char **argv)
 					{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop},
 					{"sub", sub}, {"div", divide}, {"mul", mul}, {"mod", mod},
 					{"pchar", pchar}, {"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
-					{NULL, NULL}};
+					{"stack", addStack}, {"queue", addQueue}, {NULL, NULL}};
 
 	if (argc != 2)
 		print_error1(1, 0, NULL, stack);
-	fd = fopen(argv[1], "r");
+	pub.fd = fopen(argv[1], "r");
 
-	if (fd == NULL)
+	if (pub.fd == NULL)
 		print_error1(2, 0, argv[1], stack);
-	while (fgets(instruct_buff, MAX_BUFFER, fd) != NULL)
+	while (fgets(instruct_buff, MAX_BUFFER, pub.fd) != NULL)
 	{
 		int i;
 		char *opcode = strtok(instruct_buff, " \n\t\a");
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 			print_error(3, line_number, opcode, stack);
 		}
 	}
-	fclose(fd);
+	fclose(pub.fd);
 	free_dlistint(stack);
 	exit(EXIT_SUCCESS);
 }

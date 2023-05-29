@@ -7,7 +7,6 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new_stack = NULL;
 	int value;
 	char *tok_val = strtok(NULL, " \n\t\a");
 
@@ -15,18 +14,10 @@ void push(stack_t **stack, unsigned int line_number)
 		print_error(4, line_number, NULL, *stack);
 	value = atoi(tok_val);
 
-	new_stack = malloc(sizeof(stack_t));
-	if (new_stack == NULL)
-	{
-		print_error(5, line_number, NULL, *stack);
-	}
-
-	new_stack->next = *stack;
-	new_stack->prev = NULL;
-	new_stack->n = value;
-	if (*stack)
-		(*stack)->prev = new_stack;
-	*stack = new_stack;
+	if (pub.is_LIFO == 1)
+		add_asStack(stack, line_number, value);
+	else
+		add_asQueue(stack, line_number, value);
 }
 
 

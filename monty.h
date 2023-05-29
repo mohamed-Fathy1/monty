@@ -43,7 +43,22 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern FILE *fd;
+
+/**
+ * struct pub_s - opcode and its function
+ * @fd: the opcode
+ * @is_LIFO: function to handle the opcode
+ *
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO
+ */
+typedef struct pub_s
+{
+	FILE *fd;
+	int is_LIFO;
+} pub_t;
+
+extern pub_t pub;
 
 void push(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
@@ -60,6 +75,10 @@ void pchar(stack_t **stack, unsigned int line_number);
 void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void addStack(stack_t **stack, unsigned int line_number);
+void addQueue(stack_t **stack, unsigned int line_number);
+void add_asQueue(stack_t **stack, unsigned int line_number, int value);
+void add_asStack(stack_t **stack, unsigned int line_number, int value);
 void print_error(int error, unsigned int line_number, char *opcode,
 		stack_t *stack);
 void print_error1(int error, unsigned int line_number, char *opcode,
